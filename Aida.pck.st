@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1561] on 20 January 2013 at 9:09:19 pm'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1561] on 21 January 2013 at 10:25:31 am'!
 'Description Please enter a description for this package '!
 !classDefinition: #AIDAModelAdaptorTest category: #'Aida-Tests'!
 TestCase subclass: #AIDAModelAdaptorTest
@@ -400,16 +400,6 @@ TestCase subclass: #VersionSpecTest
 VersionSpecTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #VersionedExample category: #'Aida-Tests'!
-ProtoObject subclass: #VersionedExample
-	instanceVariableNames: 'title body'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Tests'!
-!classDefinition: 'VersionedExample class' category: #'Aida-Tests'!
-VersionedExample class
-	instanceVariableNames: ''!
-
 !classDefinition: #VersionedObject category: #'Aida-Internal'!
 Object subclass: #VersionedObject
 	instanceVariableNames: 'version'
@@ -418,6 +408,16 @@ Object subclass: #VersionedObject
 	category: 'Aida-Internal'!
 !classDefinition: 'VersionedObject class' category: #'Aida-Internal'!
 VersionedObject class
+	instanceVariableNames: ''!
+
+!classDefinition: #VersionedExample category: #'Aida-Tests'!
+VersionedObject subclass: #VersionedExample
+	instanceVariableNames: 'title body'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Tests'!
+!classDefinition: 'VersionedExample class' category: #'Aida-Tests'!
+VersionedExample class
 	instanceVariableNames: ''!
 
 !classDefinition: #VersionedObjectTest category: #'Aida-Tests'!
@@ -17465,30 +17465,30 @@ testSetCurrent
 	self assert:  spec isCurrent.
 	self deny: o isCurrentVersion.! !
 
-!VersionedExample methodsFor: 'accessing' stamp: ' 21/4/07 22:08'!
+!VersionedExample methodsFor: 'accessing' stamp: 'gsa 1/21/2013 10:22'!
 body
 	^body! !
 
-!VersionedExample methodsFor: 'accessing' stamp: ' 21/4/07 22:08'!
+!VersionedExample methodsFor: 'accessing' stamp: 'gsa 1/21/2013 10:22'!
 body: anObject
 	body := anObject! !
 
-!VersionedExample methodsFor: 'copying' stamp: ' 21/4/07 22:08'!
+!VersionedExample methodsFor: 'copying' stamp: 'gsa 1/21/2013 10:23'!
 copyContentsTo: anObject
 	anObject title: self title copy.
 	anObject body: self body copy.! !
 
-!VersionedExample methodsFor: 'printing' stamp: ' 21/4/07 22:08'!
+!VersionedExample methodsFor: 'printing' stamp: 'gsa 1/21/2013 10:24'!
 printString
 	^'aVersionedExample ', 
 		(self title notNil ifTrue: [self title] ifFalse: ['']), ' ', 
 		(self body notNil ifTrue: [self body] ifFalse: [''])! !
 
-!VersionedExample methodsFor: 'accessing' stamp: ' 21/4/07 22:08'!
+!VersionedExample methodsFor: 'accessing' stamp: 'gsa 1/21/2013 10:23'!
 title
 	^title! !
 
-!VersionedExample methodsFor: 'accessing' stamp: ' 21/4/07 22:08'!
+!VersionedExample methodsFor: 'accessing' stamp: 'gsa 1/21/2013 10:23'!
 title: anObject
 	title := anObject! !
 
