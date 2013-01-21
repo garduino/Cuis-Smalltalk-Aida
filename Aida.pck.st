@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1561] on 20 January 2013 at 8:30:59 pm'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1561] on 20 January 2013 at 9:09:19 pm'!
 'Description Please enter a description for this package '!
 !classDefinition: #AIDAModelAdaptorTest category: #'Aida-Tests'!
 TestCase subclass: #AIDAModelAdaptorTest
@@ -1050,16 +1050,6 @@ ProtoObject subclass: #WebMenu
 WebMenu class
 	instanceVariableNames: ''!
 
-!classDefinition: #WebMethodImage category: #'Aida-Internal'!
-ProtoObject subclass: #WebMethodImage
-	instanceVariableNames: 'lastUsed'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Internal'!
-!classDefinition: 'WebMethodImage class' category: #'Aida-Internal'!
-WebMethodImage class
-	instanceVariableNames: 'cache'!
-
 !classDefinition: #WebMethodResource category: #'Aida-Internal'!
 Object subclass: #WebMethodResource
 	instanceVariableNames: 'site object method contentType preferedUrl'
@@ -1069,6 +1059,16 @@ Object subclass: #WebMethodResource
 !classDefinition: 'WebMethodResource class' category: #'Aida-Internal'!
 WebMethodResource class
 	instanceVariableNames: ''!
+
+!classDefinition: #WebMethodImage category: #'Aida-Internal'!
+WebMethodResource subclass: #WebMethodImage
+	instanceVariableNames: 'lastUsed'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Internal'!
+!classDefinition: 'WebMethodImage class' category: #'Aida-Internal'!
+WebMethodImage class
+	instanceVariableNames: 'cache'!
 
 !classDefinition: #WebMobileApplication category: #'Aida-Applications'!
 WebApplication subclass: #WebMobileApplication
@@ -16493,6 +16493,25 @@ prepareAidaDemoSiteOnPort: aNumber
 	site := AIDASite newNamed: name. "which is now also added to SwazoServer"
 	site host: '*' ip: '*' port: aNumber.
 	^site! !
+
+!SwazooServer class methodsFor: '*Aida' stamp: 'gsa 1/20/2013 21:01'!
+aidaDemoStart
+	"SwazooServer aidaStart"
+	"will start an Aida demo site on http://localhost:8888 "
+	self singleton aidaDemoStart! !
+
+!SwazooServer class methodsFor: '*Aida' stamp: 'gsa 1/20/2013 21:01'!
+aidaDemoStop
+	"SwazooServer aidaStop"
+	self singleton aidaDemoStop! !
+
+!SwazooServer class methodsFor: '*Aida' stamp: 'gsa 1/20/2013 21:02'!
+aidaStartOn: aPortNumber
+	"will start an Aida site on all ip interfaces, ignoring host"
+	"if there is no Aida site yet, it created one named 'aidademo''"
+	"be sure that it is only site!!"
+	"SwazooServer aidaStartOn: 8765"
+	self singleton aidaStartOn: aPortNumber! !
 
 !Time methodsFor: '*Aida'!
 printSecSloString
