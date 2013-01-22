@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1561] on 21 January 2013 at 10:25:31 am'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1572] on 22 January 2013 at 5:24:49 pm'!
 'Description Please enter a description for this package '!
 !classDefinition: #AIDAModelAdaptorTest category: #'Aida-Tests'!
 TestCase subclass: #AIDAModelAdaptorTest
@@ -61,7 +61,7 @@ AidaModelAdaptor class
 	instanceVariableNames: ''!
 
 !classDefinition: #AidaModelNullAdaptor category: #'Aida-Internal'!
-ProtoObject subclass: #AidaModelNullAdaptor
+AidaModelAdaptor subclass: #AidaModelNullAdaptor
 	instanceVariableNames: 'value'
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -430,16 +430,6 @@ TestCase subclass: #VersionedObjectTest
 VersionedObjectTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #WebAnchor category: #'Aida-Elements'!
-ProtoObject subclass: #WebAnchor
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Elements'!
-!classDefinition: 'WebAnchor class' category: #'Aida-Elements'!
-WebAnchor class
-	instanceVariableNames: ''!
-
 !classDefinition: #WebApplication category: #'Aida-Applications'!
 Object subclass: #WebApplication
 	instanceVariableNames: 'session observee contexts other'
@@ -500,16 +490,6 @@ ProtoObject subclass: #WebAutocompleteField
 WebAutocompleteField class
 	instanceVariableNames: ''!
 
-!classDefinition: #WebButton category: #'Aida-Elements'!
-ProtoObject subclass: #WebButton
-	instanceVariableNames: 'type image size'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Elements'!
-!classDefinition: 'WebButton class' category: #'Aida-Elements'!
-WebButton class
-	instanceVariableNames: ''!
-
 !classDefinition: #WebCache category: #'Aida-Internal'!
 Object subclass: #WebCache
 	instanceVariableNames: 'objects other settings parent'
@@ -560,16 +540,6 @@ WebApplication subclass: #WebChatApp
 WebChatApp class
 	instanceVariableNames: ''!
 
-!classDefinition: #WebCheckBox category: #'Aida-Elements'!
-ProtoObject subclass: #WebCheckBox
-	instanceVariableNames: 'checked selected'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Elements'!
-!classDefinition: 'WebCheckBox class' category: #'Aida-Elements'!
-WebCheckBox class
-	instanceVariableNames: ''!
-
 !classDefinition: #WebClipboard category: #'Aida-Internal'!
 Object subclass: #WebClipboard
 	instanceVariableNames: 'title url object'
@@ -601,7 +571,7 @@ WebContext class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebContextFirst category: #'Aida-Internal'!
-ProtoObject subclass: #WebContextFirst
+WebContext subclass: #WebContextFirst
 	instanceVariableNames: 'view mainSemaphore'
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -750,16 +720,6 @@ WebElement subclass: #WebFieldSet
 WebFieldSet class
 	instanceVariableNames: ''!
 
-!classDefinition: #WebFileInputField category: #'Aida-Elements'!
-ProtoObject subclass: #WebFileInputField
-	instanceVariableNames: 'filenameAspect contentTypeAspect writeStream writeBlock'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Elements'!
-!classDefinition: 'WebFileInputField class' category: #'Aida-Elements'!
-WebFileInputField class
-	instanceVariableNames: ''!
-
 !classDefinition: #WebFileInputTest category: #'Aida-Tests'!
 TestCase subclass: #WebFileInputTest
 	instanceVariableNames: 'file filename'
@@ -788,6 +748,26 @@ WebElement subclass: #WebFormElement
 	category: 'Aida-Elements'!
 !classDefinition: 'WebFormElement class' category: #'Aida-Elements'!
 WebFormElement class
+	instanceVariableNames: ''!
+
+!classDefinition: #WebButton category: #'Aida-Elements'!
+WebFormElement subclass: #WebButton
+	instanceVariableNames: 'type image size'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Elements'!
+!classDefinition: 'WebButton class' category: #'Aida-Elements'!
+WebButton class
+	instanceVariableNames: ''!
+
+!classDefinition: #WebCheckBox category: #'Aida-Elements'!
+WebFormElement subclass: #WebCheckBox
+	instanceVariableNames: 'checked selected'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Elements'!
+!classDefinition: 'WebCheckBox class' category: #'Aida-Elements'!
+WebCheckBox class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebGeolocation category: #'Aida-Internal'!
@@ -921,13 +901,23 @@ WebIndexApp class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebInputField category: #'Aida-Elements'!
-ProtoObject subclass: #WebInputField
+WebFormElement subclass: #WebInputField
 	instanceVariableNames: 'size maxLength type'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Aida-Elements'!
 !classDefinition: 'WebInputField class' category: #'Aida-Elements'!
 WebInputField class
+	instanceVariableNames: ''!
+
+!classDefinition: #WebFileInputField category: #'Aida-Elements'!
+WebInputField subclass: #WebFileInputField
+	instanceVariableNames: 'filenameAspect contentTypeAspect writeStream writeBlock'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Elements'!
+!classDefinition: 'WebFileInputField class' category: #'Aida-Elements'!
+WebFileInputField class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebJSON category: #'Aida-Internal'!
@@ -978,16 +968,6 @@ Object subclass: #WebLanguage
 	category: 'Aida-i18n'!
 !classDefinition: 'WebLanguage class' category: #'Aida-i18n'!
 WebLanguage class
-	instanceVariableNames: ''!
-
-!classDefinition: #WebLink category: #'Aida-Elements'!
-ProtoObject subclass: #WebLink
-	instanceVariableNames: 'ooReference urlReference parms anchor security'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Elements'!
-!classDefinition: 'WebLink class' category: #'Aida-Elements'!
-WebLink class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebList category: #'Aida-Elements'!
@@ -1041,7 +1021,7 @@ WebLivePDFCreator class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebMenu category: #'Aida-Elements'!
-ProtoObject subclass: #WebMenu
+WebFormElement subclass: #WebMenu
 	instanceVariableNames: 'multiple selected adaptorToStore sort'
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -1081,23 +1061,13 @@ WebMobileApplication class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebRadioButton category: #'Aida-Elements'!
-ProtoObject subclass: #WebRadioButton
+WebFormElement subclass: #WebRadioButton
 	instanceVariableNames: 'checked'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Aida-Elements'!
 !classDefinition: 'WebRadioButton class' category: #'Aida-Elements'!
 WebRadioButton class
-	instanceVariableNames: ''!
-
-!classDefinition: #WebRawText category: #'Aida-Elements'!
-ProtoObject subclass: #WebRawText
-	instanceVariableNames: ''
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Elements'!
-!classDefinition: 'WebRawText class' category: #'Aida-Elements'!
-WebRawText class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebRealtimeConnection category: #'Aida-Internal'!
@@ -1361,7 +1331,7 @@ WebTableCell class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebTableHeader category: #'Aida-Elements'!
-ProtoObject subclass: #WebTableHeader
+WebTableCell subclass: #WebTableHeader
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -1410,8 +1380,38 @@ WebElement subclass: #WebText
 WebText class
 	instanceVariableNames: ''!
 
+!classDefinition: #WebAnchor category: #'Aida-Elements'!
+WebText subclass: #WebAnchor
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Elements'!
+!classDefinition: 'WebAnchor class' category: #'Aida-Elements'!
+WebAnchor class
+	instanceVariableNames: ''!
+
+!classDefinition: #WebLink category: #'Aida-Elements'!
+WebText subclass: #WebLink
+	instanceVariableNames: 'ooReference urlReference parms anchor security'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Elements'!
+!classDefinition: 'WebLink class' category: #'Aida-Elements'!
+WebLink class
+	instanceVariableNames: ''!
+
+!classDefinition: #WebRawText category: #'Aida-Elements'!
+WebText subclass: #WebRawText
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Elements'!
+!classDefinition: 'WebRawText class' category: #'Aida-Elements'!
+WebRawText class
+	instanceVariableNames: ''!
+
 !classDefinition: #WebTextArea category: #'Aida-Elements'!
-ProtoObject subclass: #WebTextArea
+WebFormElement subclass: #WebTextArea
 	instanceVariableNames: 'rows columns'
 	classVariableNames: ''
 	poolDictionaries: ''
