@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1572] on 22 January 2013 at 5:24:49 pm'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1572] on 22 January 2013 at 5:35:18 pm'!
 'Description Please enter a description for this package '!
 !classDefinition: #AIDAModelAdaptorTest category: #'Aida-Tests'!
 TestCase subclass: #AIDAModelAdaptorTest
@@ -210,16 +210,6 @@ ImageStream subclass: #GifImageStream
 GifImageStream class
 	instanceVariableNames: ''!
 
-!classDefinition: #JoomlaMenu category: #'Aida-Styles'!
-ProtoObject subclass: #JoomlaMenu
-	instanceVariableNames: 'pages'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'Aida-Styles'!
-!classDefinition: 'JoomlaMenu class' category: #'Aida-Styles'!
-JoomlaMenu class
-	instanceVariableNames: ''!
-
 !classDefinition: #MIMEMap category: #'Aida-Internal'!
 Object subclass: #MIMEMap
 	instanceVariableNames: 'mimeTypes fileExtensions'
@@ -428,6 +418,16 @@ TestCase subclass: #VersionedObjectTest
 	category: 'Aida-Tests'!
 !classDefinition: 'VersionedObjectTest class' category: #'Aida-Tests'!
 VersionedObjectTest class
+	instanceVariableNames: ''!
+
+!classDefinition: #WebAdmin category: #'Aida-Admin'!
+Object subclass: #WebAdmin
+	instanceVariableNames: 'host ip port'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Admin'!
+!classDefinition: 'WebAdmin class' category: #'Aida-Admin'!
+WebAdmin class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebApplication category: #'Aida-Applications'!
@@ -658,6 +658,16 @@ WebElement subclass: #JoomlaModule
 	category: 'Aida-Styles'!
 !classDefinition: 'JoomlaModule class' category: #'Aida-Styles'!
 JoomlaModule class
+	instanceVariableNames: ''!
+
+!classDefinition: #JoomlaMenu category: #'Aida-Styles'!
+JoomlaModule subclass: #JoomlaMenu
+	instanceVariableNames: 'pages'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Aida-Styles'!
+!classDefinition: 'JoomlaMenu class' category: #'Aida-Styles'!
+JoomlaMenu class
 	instanceVariableNames: ''!
 
 !classDefinition: #WebAudio category: #'Aida-Elements'!
@@ -1859,6 +1869,10 @@ VersionedObject for objects of many versions through the time, with a current ve
 
 !ViewTabs commentStamp: '<historical>' prior: 0!
 For quick selection of App views. Just fill with view names and descriptions, all other will be automatic. Tab for curently shown will be colored as shown, other tabls will have links to self observee and appropriate view!
+
+!WebAdmin commentStamp: '<historical>' prior: 0!
+WebAdmin is domain model part for WebAdminApp
+!
 
 !WebAdminApp commentStamp: '<historical>' prior: 0!
 WebAdminApp for login/logout, basic website setup, server runs etc.!
@@ -17838,6 +17852,35 @@ views
 !ViewTabs class methodsFor: 'instance creation' stamp: ' 21/4/07 22:07'!
 new
 	^super new initialize! !
+
+!WebAdmin methodsFor: 'accessing' stamp: 'np 3/16/2009 12:57'!
+aidaCacheView: aSymbol on: aWebSession
+	^false
+	"^aSymbol = #login"  "use only for standard throughput benchmark!!"! !
+
+!WebAdmin methodsFor: 'accessing' stamp: ' 21/4/07 22:07'!
+host
+	^host! !
+
+!WebAdmin methodsFor: 'accessing' stamp: ' 21/4/07 22:07'!
+host: aString
+	host := aString! !
+
+!WebAdmin methodsFor: 'accessing' stamp: ' 21/4/07 22:07'!
+ip
+	^ip! !
+
+!WebAdmin methodsFor: 'accessing' stamp: ' 21/4/07 22:07'!
+ip: aString
+	ip := aString! !
+
+!WebAdmin methodsFor: 'accessing' stamp: ' 21/4/07 22:07'!
+port
+	^port! !
+
+!WebAdmin methodsFor: 'accessing' stamp: ' 21/4/07 22:07'!
+port: aNumber
+	port := aNumber! !
 
 !WebAdminApp methodsFor: 'actions' stamp: 'mivsek 6/13/2007 16:33'!
 actionAddSite
