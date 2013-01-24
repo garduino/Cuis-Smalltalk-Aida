@@ -1,4 +1,4 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1572] on 22 January 2013 at 5:35:18 pm'!
+'From Cuis 4.1 of 12 December 2012 [latest update: #1572] on 24 January 2013 at 11:28:26 am'!
 'Description Please enter a description for this package '!
 !classDefinition: #AIDAModelAdaptorTest category: #'Aida-Tests'!
 TestCase subclass: #AIDAModelAdaptorTest
@@ -10499,6 +10499,14 @@ system
 version
 	^'003'! !
 
+!HTTPException class methodsFor: '*Aida' stamp: 'gsa 1/24/2013 11:28'!
+raiseResponse: aHTTPResponse
+	"Raise an exception to immediatelly return that response."
+	"put that on Swazoo next version!!!!!!"
+	^self new 
+		response: aHTTPResponse;
+		signal.! !
+
 !HTTPPost methodsFor: '*Aida'!
 ajaxSingleInputName
 	"Single form field Ajax posts have additional parameter carying the name of that field"
@@ -16000,6 +16008,17 @@ transcript4
 !SchedulerTest methodsFor: 'private' stamp: ' 21/4/07 22:08'!
 transcript5
 	Transcript cr; show: 'scheduled event 5'! !
+
+!SortedCollection class methodsFor: '*Aida' stamp: 'gsa 1/24/2013 11:26'!
+withAll: aCollection sortBlock: aBlock
+	" Answer a new SortedCollection with
+	the given elements and sortBlock. "
+
+	| newCollection |
+	newCollection := self new: aCollection size.
+	newCollection sortBlock: aBlock.
+	newCollection addAll: aCollection.
+	^newCollection! !
 
 !SpDate methodsFor: '*Aida' stamp: 'JM 4/22/2007 19:01'!
 + aNumber 
