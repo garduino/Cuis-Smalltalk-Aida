@@ -21,7 +21,7 @@ To install, evaluate:
     '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Network-Url.pck.st' .
     '..', slash, 'Cuis-Sport', slash, 'Sport.pck.st' .
     '..', slash, 'Cuis-Swazoo', slash, 'Swazoo.pck.st' .
-    '..', slash, 'Cuis-Swazoo', slash, 'Swazoo.pck.st' .
+    '..', slash, 'Cuis-Aida', slash, 'Aida.pck.st' .
     }
     do:
     [ :fileName | CodePackageFile installPackageStream:
