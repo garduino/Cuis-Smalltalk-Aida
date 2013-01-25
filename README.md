@@ -17,15 +17,22 @@ To install, evaluate:
     {
     '..', slash, 'Cuis-Cryptography', slash, 'Cuis-System-Hashing.pck.st' .
     '..', slash, 'Cuis-CompatibilityWithOtherSmalltalks', slash, 'Cuis-CompatibilityWithOtherSmalltalks.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Network-MIME.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Network-UUID.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-NetworkTests-UUID.pck.st' .
     '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Network-Protocols.pck.st' .
     '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Network-Url.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Network-RFC822.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-Settings-Network.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-NetworkTests-Protocols.pck.st' .
+    '..', slash, 'Cuis-Pharo14CompatibilityLayer', slash, 'Cuis-NetworkTests-RFC822.pck.st' .
     '..', slash, 'Cuis-Sport', slash, 'Sport.pck.st' .
     '..', slash, 'Cuis-Swazoo', slash, 'Swazoo.pck.st' .
     '..', slash, 'Cuis-Aida', slash, 'Aida.pck.st' .
     }
     do:
     [ :fileName | CodePackageFile installPackageStream:
-        (FileStream concreteStream readOnlyFileNamed: fileName)
+    (FileStream concreteStream readOnlyFileNamed: fileName)
     ].
 
 
