@@ -1,2 +1,0 @@
-'From Cuis 4.1 of 12 December 2012 [latest update: #1572] on 24 January 2013 at 1:22:34 pm'!
-'Description Please enter a description for this package '!
