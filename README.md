@@ -33,3 +33,9 @@ To install, evaluate:
     ].
 
 Or alternatively download a ready to use image from http://www.arduinosoftware.com/cuis/CuisAida.zip
+
+To install AidaToDoExample (http://www.aidaweb.si/todo-description) add in the previous installation script a line:
+
+   '..', slash, 'Cuis-Aida', slash, 'AidaToDoExample.pck.st' .
+   
+CAUTION: You can not use the CuisAida.zip image because must grab the latest version of Aida to get AidaToDoExample working.
