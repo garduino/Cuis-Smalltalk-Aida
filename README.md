@@ -11,7 +11,7 @@ The 80 tests are green.
 
 To install, evaluate:
 ````Smalltalk
-	Feature require: 'Aida-Installer'
+	Feature require: 'Aida'
 ````
 
 Or alternatively download a ready to use image from http://www.arduinosoftware.com/cuis/Cuis4.2-1808AidaImage.zip
