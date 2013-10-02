@@ -14,6 +14,6 @@ To install, evaluate:
 	Feature require: 'Aida'
 ````
 
-Or alternatively download a ready to use image from http://www.arduinosoftware.com/cuis/Cuis4.2-1808AidaImage.zip
+Or alternatively download a ready to use image from http://www.arduinosoftware.com/cuis/Cuis4.2-1840AidaImage.zip
 
 
